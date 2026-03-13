@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Wrench, Car, Settings, Gauge, Droplets, ArrowRight, CheckCircle, Loader2 } from "lucide-react";
 
 export default function Home() {
-  const [formData, setFormData] = useState({ name: "", phone: "", service: "", message: "" });
+  const [formData, setFormData] = useState({ phone: "", service: "", message: "" });
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -27,7 +27,7 @@ export default function Home() {
       }
 
       setIsSuccess(true);
-      setFormData({ name: "", phone: "", service: "", message: "" });
+      setFormData({ phone: "", service: "", message: "" });
     } catch {
       setError("Не удалось отправить заявку. Попробуйте позвонить нам.");
     } finally {
@@ -237,31 +237,17 @@ export default function Home() {
                   {error}
                 </div>
               )}
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-zinc-400 mb-2">Ваше имя</label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-5 py-4 rounded-xl bg-zinc-950 border border-zinc-800 focus:border-orange-500 focus:ring-1 focus:ring-orange-500/30 outline-none transition-colors text-zinc-100 placeholder-zinc-600"
-                    placeholder="Иван"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-zinc-400 mb-2">Телефон</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-5 py-4 rounded-xl bg-zinc-950 border border-zinc-800 focus:border-orange-500 focus:ring-1 focus:ring-orange-500/30 outline-none transition-colors text-zinc-100 placeholder-zinc-600"
-                    placeholder="+7 (999) 000-00-00"
-                  />
-                </div>
+              <div className="mb-6">
+                <label htmlFor="phone" className="block text-sm font-medium text-zinc-400 mb-2">Телефон</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  required
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="w-full px-5 py-4 rounded-xl bg-zinc-950 border border-zinc-800 focus:border-orange-500 focus:ring-1 focus:ring-orange-500/30 outline-none transition-colors text-zinc-100 placeholder-zinc-600"
+                  placeholder="+7 (999) 000-00-00"
+                />
               </div>
               <div className="mb-6">
                 <label htmlFor="service" className="block text-sm font-medium text-zinc-400 mb-2">Услуга</label>

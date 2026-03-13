@@ -6,11 +6,11 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, phone, service, message } = body;
+    const { phone, service, message } = body;
 
-    if (!name || !phone) {
+    if (!phone) {
       return NextResponse.json(
-        { error: "Имя и телефон обязательны" },
+        { error: "Телефон обязателен" },
         { status: 400 }
       );
     }
@@ -29,7 +29,6 @@ export async function POST(request: NextRequest) {
 
     const text = `🚗 *Новая заявка на ремонт*
 
-*Имя:* ${name}
 *Телефон:* ${phone}
 *Услуга:* ${serviceText}
 ${message ? `*Сообщение:* ${message}` : ""}`;
