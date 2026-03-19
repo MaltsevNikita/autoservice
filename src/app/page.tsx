@@ -62,15 +62,14 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-950/90 via-zinc-900/85 to-zinc-950/90"></div>
         <Image
           src="/autoservice-car.webp"
           alt="Автомобиль на ремонте"
           fill
-          className="object-cover"
+          className="object-cover opacity-70"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 to-zinc-950/70"></div>
         
         <div className="relative max-w-6xl mx-auto px-6 py-32">
           <div className="max-w-3xl">
