@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, Wrench, Car, Settings, Gauge, Droplets, ArrowRight, CheckCircle, Loader2 } from "lucide-react";
 
 export default function Home() {
@@ -62,13 +61,10 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image
-          src="/autoservice-car.webp"
-          alt="Автомобиль на ремонте"
-          fill
-          className="object-cover opacity-70"
-          priority
-        />
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: "url('/autoservice-car.webp')" }}
+        ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 to-zinc-950/70"></div>
         
         <div className="relative max-w-6xl mx-auto px-6 py-32">
