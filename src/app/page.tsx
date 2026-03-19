@@ -62,10 +62,10 @@ export default function Home() {
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          className="absolute inset-0 bg-cover bg-fixed"
           style={{ backgroundImage: "url('/autoservice-car.webp')" }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 to-zinc-950/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/60 to-zinc-950/40"></div>
         
         <div className="relative max-w-6xl mx-auto px-6 py-32">
           <div className="max-w-3xl">
